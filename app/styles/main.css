@@ -1,14 +1,47 @@
-#main {
-    /*position: absolute;
-    top: 41px;
+#container {
+    position: absolute;
+    top: 51px;
     bottom: 0;
     left: 0;
-    right: 0;*/
+    right: 0;
 }
 #map {
-    width: 90%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 300px;
 }
 #panel {
-    
+    width: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+[data-toggle] {
+    display: none;
+}
+
+/* Anything smaller than a desktop */
+@media (max-width: 992px) {
+    #map {
+        right: 0;
+    }
+    #panel {
+        width: 100%;
+        left: 0;
+    }
+    .viewing-map #panel {
+        display: none;
+    }
+    .viewing-list #map {
+        display: none;
+    }
+    .viewing-map [data-toggle="list"] {
+        display: inline;
+    }
+    .viewing-list [data-toggle="map"] {
+        display: inline;
+    }
 }
