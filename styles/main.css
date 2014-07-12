@@ -18,6 +18,13 @@
     top: 0;
     bottom: 0;
     right: 0;
+    overflow-y: auto;
+}
+#panel .list-group-item-detail {
+    display: none;
+}
+#panel li.focus {
+    background-color: #FFFDCC;
 }
 [data-toggle] {
     display: none;
@@ -44,4 +51,10 @@
     .viewing-list [data-toggle="map"] {
         display: inline;
     }
+}
+
+/* NProgress */
+#nprogress .bar, #nprogress .spinner {
+    margin-top: 50px;
+    z-index: 0;
 }

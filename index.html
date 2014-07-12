@@ -10,6 +10,7 @@
     <!-- build:css styles/main.min.css -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="vendor/nprogress/nprogress.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- /build -->
 </head>
@@ -25,19 +26,28 @@
     <!-- Main Content Container -->
     <div id="container">
         <div id="map"></div>
-        <div id="panel">
-            <ul class="list-group">
-                <li class="list-group-item">Lorem</li>
-                <li class="list-group-item">Ipsum</li>
-                <li class="list-group-item">Dolor</li>
-                <li class="list-group-item">Sit</li>
-                <li class="list-group-item">Amet</li>
-            </ul>
-        </div>
+        <div id="panel"></div>
     </div>
+    
+    <script type="text/x-handlebars-template" id="tmpl-panel">
+        <ul class="list-group">
+            {{#each features}}
+            <li class="list-group-item">
+                <a href="#" data-feature-id="{{ this.feature.id }}">{{ this.feature.properties.OFFICIAL_S }}</a><br>
+                <span class="list-group-item-detail">
+                {{ this.feature.properties.STORE_ADDR }}<br>
+                {{ this.feature.properties.ZIP_CODE }}
+                </span>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="vendor/handlebars/handlebars.min.js"></script>
     <script src="vendor/leaflet/dist/leaflet.js"></script>
+    <script src="vendor/esri-leaflet/dist/esri-leaflet-src.js"></script>
+    <script src="vendor/nprogress/nprogress.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
